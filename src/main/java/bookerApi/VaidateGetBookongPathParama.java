@@ -1,9 +1,12 @@
 package bookerApi;
 
+import core.StatusCode;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+
+import javax.swing.text.DefaultEditorKit;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -31,7 +34,14 @@ public class VaidateGetBookongPathParama {
             }
 
         }
-
-
+    }
+    @Test(description = "Negative test case with invalid id")
+    public void invalidPathParam(){
+        Response resp = given()
+                .pathParam("id",222222)
+                .when()
+                .get("https://restful-booker.herokuapp.com/booking/{id}");
+        int Code = resp.statusCode();
+        assertEquals(Code, StatusCode.NOT_FOUND.code);
     }
 }
