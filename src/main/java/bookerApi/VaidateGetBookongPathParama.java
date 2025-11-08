@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.isEmptyString;
 import static org.testng.Assert.assertEquals;
 
 public class VaidateGetBookongPathParama {
-    @Test(description = "valdate id 1")
+    @Test(description = "valdate id 1", groups={"SmokeSuit"})
     public void validatePathParam(){
         Response resp = given()
                 .pathParam("id",1)
