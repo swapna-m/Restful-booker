@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Api Automation Regression Suite">
+    <test name="Validate Bookings">
+        <groups>
+            <run>
+                <include name="RegressionSuite"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="bookerApi.Validate_get_Bookings"></class>
+        </classes>
+    </test>
+</suite>

@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.*;
 import static org.testng.Assert.assertEquals;
 
 public class Validate_get_Bookings {
-    @Test
+    @Test(groups = "RegressionSuite")
     public void verifyGetBookings(){
         Response resp = given()
                 .when().get("https://restful-booker.herokuapp.com/booking");
